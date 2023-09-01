@@ -35,4 +35,12 @@ describe("Log Actions API", () => {
 
     expect(response.status).toBe(200);
   });
+
+  it("should return 500 with wrong crypto", async () => {
+    const response = await request(server)
+      .post("/api/logSearch")
+      .send({ crypto: "BTC" });
+
+    expect(response.status).toBe(500);
+  });
 });
