@@ -4,7 +4,6 @@ import cors from "cors";
 import mongoose, { ConnectOptions } from "mongoose";
 import logActionsRouter from "./routes/logActions";
 
-// Wrap app creation logic in a function
 export function createApp(): Application {
   const app: Application = express();
 
@@ -12,7 +11,6 @@ export function createApp(): Application {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cors({ origin: true }));
 
-  // Connect to MongoDB
   mongoose
     .connect("mongodb://127.0.0.1:27017/crypto_logger", {
       useNewUrlParser: true,
@@ -40,7 +38,6 @@ export function createApp(): Application {
   return app;
 }
 
-// Start the server if this file is the entry point
 if (require.main === module) {
   createApp();
 }
