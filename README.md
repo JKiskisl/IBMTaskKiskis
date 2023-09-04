@@ -1,20 +1,25 @@
 # IBMTaskKiskis
 
 server-backend
-client-frontend
 
-backend:
-cd server
-npm install
-npm start
+> client-frontend
 
-backend tests:
+# backend:
 
-npx jest
+> cd server
+>
+> npm install
+>
+> npm start
 
-frontend:
+# backend tests:
 
-cd client
+> npx jest
 
-npm install
-npm start
+# frontend:
+
+> cd client
+>
+> npm install
+>
+> npm start
