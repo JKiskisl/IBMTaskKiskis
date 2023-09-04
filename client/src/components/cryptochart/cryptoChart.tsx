@@ -78,7 +78,7 @@ const CryptoChart: React.FC<CryptoChartProps> = ({
     new Date(item.timestamp).toLocaleDateString()
   );
   const dataset = {
-    label: "Cryptocurrency Price",
+    label: `${selectedCryptocurrency} Price`,
     data: cryptoData.map((item) => item.close),
     borderColor: "rgb(53, 162, 235)",
     backgroundColor: "rgba(53, 162, 235, 0.5)",
