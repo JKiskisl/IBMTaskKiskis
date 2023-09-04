@@ -30,10 +30,15 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Cryptocurrency Price Chart",
+      text: "",
     },
   },
 };
+
+interface CryptoChartProps {
+  selectedCryptocurrency: string | null;
+  selectedDataRange: string;
+}
 
 interface CryptoData {
   timestamp: number;
@@ -44,19 +49,30 @@ interface CryptoData {
   volume: number;
 }
 
-function CryptoChart() {
+const CryptoChart: React.FC<CryptoChartProps> = ({
+  selectedCryptocurrency,
+  selectedDataRange,
+}) => {
   const [cryptoData, setCryptoData] = useState<CryptoData[]>([]);
 
   useEffect(() => {
-    const crypto = "BTC/USDT";
-    const dataRange = "30d";
+    const crypto = selectedCryptocurrency || "BTC/USDT";
+    const dataRange = selectedDataRange || "30d";
 
     logSearch(crypto, dataRange).then((response) => {
       if (response.data && response.data.data) {
         setCryptoData(response.data.data);
       }
     });
-  }, []);
+  }, [selectedCryptocurrency, selectedDataRange]);
+
+  useEffect(() => {
+    if (selectedCryptocurrency) {
+      options.plugins.title.text = `${selectedCryptocurrency} Price Chart`;
+    } else {
+      options.plugins.title.text = "Cryptocurrency Price Chart";
+    }
+  }, [selectedCryptocurrency]);
 
   const labels = cryptoData.map((item) =>
     new Date(item.timestamp).toLocaleDateString()
@@ -74,6 +90,6 @@ function CryptoChart() {
   };
 
   return <Line options={options} data={data} />;
-}
+};
 
 export default CryptoChart;

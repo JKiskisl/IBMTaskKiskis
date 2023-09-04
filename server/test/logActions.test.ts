@@ -20,9 +20,9 @@ describe("Log Actions API", () => {
     await mongoose.connection.close();
   });
   it("should log a search action", async () => {
-    const response = await request(server)
-      .get("/api/logSearch")
-      .query({ crypto: "BTC/USDT", dataRange: "1d" });
+    const response = await request(server).get(
+      "/api/logSearch?crypto=BTC/USDT&dataRange=1d"
+    );
 
     expect(response.status).toBe(200);
   }, 10000);

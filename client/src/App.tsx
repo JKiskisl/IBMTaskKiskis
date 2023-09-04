@@ -1,10 +1,11 @@
 import Header from "./components/header/header";
-import CryptoChart from "./components/cryptochart/cryptoChart";
+
+import CryptoDashboard from "./components/cryptochart/cryptoDashboard";
 function App() {
   return (
     <div className="App">
       <Header />
-      <CryptoChart />
+      <CryptoDashboard />
     </div>
   );
 }
