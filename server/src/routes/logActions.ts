@@ -6,8 +6,8 @@ import { logSelected } from "../controllers/logSelect_controller";
 
 const router: Router = express.Router();
 
-router.post("/logSearch", logSearch);
+router.get("/logSearch", logSearch);
 
-router.post("/logSelected", logSelected);
+router.get("/logSelected", logSelected);
 
 export default router;

@@ -2,12 +2,16 @@ import { Request, Response } from "express";
 import Action from "../model";
 
 export function logSelected(req: Request, res: Response) {
-  const selectedCrypto: string = req.body.crypto;
+  console.log("Request query parameters:", req.query);
+  const selectedCrypto: string = req.query.crypto as string;
+  const dataRange: string = req.query.dataRange as string;
   console.log(`User selected: ${selectedCrypto}`);
+  console.log(`Data range selected: ${dataRange}`);
 
   const action = new Action({
     type: "selected",
     crypto: selectedCrypto,
+    dataRange: dataRange,
   });
 
   action

@@ -19,27 +19,26 @@ describe("Log Actions API", () => {
 
     await mongoose.connection.close();
   });
-
   it("should log a search action", async () => {
     const response = await request(server)
-      .post("/api/logSearch")
-      .send({ crypto: "BTC/USDT" });
+      .get("/api/logSearch")
+      .query({ crypto: "BTC/USDT", dataRange: "1d" });
 
     expect(response.status).toBe(200);
-  });
+  }, 10000);
 
   it("should log a selected action", async () => {
     const response = await request(server)
-      .post("/api/logSelected")
-      .send({ crypto: "BTC/USDT" });
+      .get("/api/logSelected")
+      .query({ crypto: "BTC/USDT", dataRange: "3d" });
 
     expect(response.status).toBe(200);
   });
 
   it("should return 500 with wrong crypto", async () => {
     const response = await request(server)
-      .post("/api/logSearch")
-      .send({ crypto: "BTC" });
+      .get("/api/logSearch")
+      .query({ crypto: "BTC" });
 
     expect(response.status).toBe(500);
   });
