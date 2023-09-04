@@ -2,7 +2,7 @@
 
 server-backend
 
-> client-frontend
+client-frontend
 
 # backend:
 
