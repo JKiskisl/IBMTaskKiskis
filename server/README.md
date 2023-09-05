@@ -4,7 +4,8 @@ The backend of the Cryptocurrency Price Tracker application is responsible for h
 
 ## Controllers
 
-`logSearch_controller.ts`
+### `logSearch_controller.ts`
+
 The `logSearch_controller.ts` file contains the controller function for logging cryptocurrency searches. It handles GET requests to the /api/logSearch endpoint and performs the following actions:
 
 1.  Extracts query parameters for the searched cryptocurrency and data range.
@@ -13,7 +14,8 @@ The `logSearch_controller.ts` file contains the controller function for logging 
 4.  Formats and returns the fetched data as JSON.
 5.  Saves the search action to the database.
 
-`logSelect_controller.ts`
+### `logSelect_controller.ts`
+
 The `logSelect_controller.ts` file contains the controller function for logging selected cryptocurrencies. It handles GET requests to the `/api/logSelected` endpoint and performs the following actions:
 
 1.  Extracts query parameters for the selected cryptocurrency and data range.
@@ -22,7 +24,8 @@ The `logSelect_controller.ts` file contains the controller function for logging 
 
 ## Routes
 
-`logActions.ts`
+### `logActions.ts`
+
 The `logActions.ts` file defines the routes for logging user actions. It uses the Express Router to create two endpoints:
 
 1.  `/api/logSearch`: Handles logging cryptocurrency search actions.
@@ -31,7 +34,8 @@ The `logActions.ts` file defines the routes for logging user actions. It uses th
 
 ## Services
 
-`fetchCrypto.ts`
+### `fetchCrypto.ts`
+
 The `fetchCrypto.ts` file defines the fetchCryptoCurrency function, responsible for fetching cryptocurrency data from external sources. It uses the CCXT library to interact with cryptocurrency exchanges. The function takes two parameters:
 
 1.  `cryptoSymbol`: The symbol of the cryptocurrency to fetch.
@@ -40,7 +44,8 @@ The `fetchCrypto.ts` file defines the fetchCryptoCurrency function, responsible 
 
 ## Index File
 
-`index.ts`
+### `index.ts`
+
 The `index.ts` file serves as the entry point for the backend application. It does the following:
 
 1.  Initializes Express and sets up middleware (body parser, CORS).
@@ -51,7 +56,8 @@ The `index.ts` file serves as the entry point for the backend application. It do
 
 ## Model
 
-`model.ts`
+### `model.ts`
+
 The `model.ts` file defines the Mongoose schema for logging user actions. It uses the Action model with the following schema fields:
 
 1. `type`: The type of action (e.g., "search," "selected").
