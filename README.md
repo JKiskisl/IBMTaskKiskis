@@ -4,7 +4,7 @@ server-backend
 
 client-frontend
 
-# backend:
+# backend (port:8000):
 
 > cd server
 >
@@ -16,7 +16,7 @@ client-frontend
 
 > npx jest
 
-# frontend:
+# frontend(port:3000):
 
 > cd client
 >

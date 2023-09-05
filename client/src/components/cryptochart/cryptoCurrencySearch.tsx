@@ -90,13 +90,22 @@ const CryptocurrencySearch: React.FC<CryptocurrencySearchProps> = ({
 
   return (
     <Paper elevation={3} style={{ padding: "16px" }}>
-      <Select
-        options={cryptoOptions}
-        value={selectedCryptocurrency}
-        onChange={(selectedOption) => setSelectedCryptocurrency(selectedOption)}
-        onInputChange={handleInputChange}
-        placeholder="Search for a cryptocurrency..."
-      />
+      <div style={{ position: "relative" }}>
+        {errorMessage && (
+          <div style={{ color: "red", position: "absolute", top: "-20px" }}>
+            {errorMessage}
+          </div>
+        )}
+        <Select
+          options={cryptoOptions}
+          value={selectedCryptocurrency}
+          onChange={(selectedOption) =>
+            setSelectedCryptocurrency(selectedOption)
+          }
+          onInputChange={handleInputChange}
+          placeholder="Search for a cryptocurrency..."
+        />
+      </div>
       <br />
       <TextField
         label=""
@@ -120,9 +129,6 @@ const CryptocurrencySearch: React.FC<CryptocurrencySearchProps> = ({
       <Button variant="contained" color="primary" onClick={handleSearch}>
         Search
       </Button>
-      {errorMessage && (
-        <div style={{ color: "red", marginTop: "8px" }}>{errorMessage}</div>
-      )}
     </Paper>
   );
 };
