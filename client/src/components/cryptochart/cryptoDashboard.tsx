@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CryptocurrencySearch from "./cryptoCurrencySearch";
 import CryptoChart from "./cryptoChart";
-import { logSelected } from "../../services/log.service";
 
 function CryptoDashboard() {
   const [selectedCryptocurrency, setSelectedCryptocurrency] = useState<
@@ -12,14 +11,6 @@ function CryptoDashboard() {
   const handleSearch = (crypto: string, dataRange: string) => {
     setSelectedCryptocurrency(crypto);
     setSelectedDataRange(dataRange);
-
-    logSelected({ crypto, dataRange })
-      .then((response) => {
-        console.log("Selected action logged:", crypto, dataRange);
-      })
-      .catch((error) => {
-        console.error("Error logging selected action:", error);
-      });
   };
 
   return (
