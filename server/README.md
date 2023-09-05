@@ -93,3 +93,14 @@ npm start
 ```
 
 The backend server will be running on the specified port (default: 8000) and ready to handle API requests from the frontend.
+
+## Tests (jest)
+
+### `logActions.test.ts`
+
+To run the tests, open up your terminal, and proceed with the following commands:
+
+```bash
+cd server
+npx jest
+```
