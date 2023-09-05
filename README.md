@@ -13,8 +13,7 @@ Cryptocurrency Price Tracker is a web application that allows users to search fo
 3. [Backend](#backend)
    - [Backend Documentation](#backend-documentation)
    - [Getting Started with Backend](#getting-started-with-backend)
-4. [Contributing](#contributing)
-5. [License](#license)
+
 
 ## Project Overview
 
