@@ -1,6 +1,6 @@
-# Cryptocurrency Price Tracker
-
 # IBMTaskKiskis
+
+# Cryptocurrency Price Tracker
 
 Cryptocurrency Price Tracker is a web application that allows users to search for and track the prices of various cryptocurrencies. This project consists of both frontend and backend components. This README provides an overview of the entire project, its structure, and how to get started.
 
